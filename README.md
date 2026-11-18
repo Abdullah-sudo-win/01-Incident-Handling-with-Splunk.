@@ -117,10 +117,11 @@ This finding indicated potentially malicious file placement on the web server.
 Used Windows Sysmon Event ID 1 (Process Creation) to investigate the execution of `3791.exe`.
 
 **Observed process information:**
-- Executable: `3791.exe`
-- Location: `C:\inetpub\wwwroot\joomla\3791.exe`
-- Parent process: `cmd.exe`
+
+- Process created (Image): `C:\Windows\SysWOW64\cmd.exe`
+- Parent process (ParentImage): `C:\inetpub\wwwroot\joomla\3791.exe`
 - Execution context: `NT AUTHORITY\IUSR`
+
 
 This evidence connects the suspicious executable to process execution on the investigated server.
 
@@ -141,6 +142,11 @@ This artifact was investigated as a possible indicator of attacker messaging or 
 Further validation is required before confirming the full impact.
 
 ![Suspicious Web Artifact](evidence/07-Actions-on-Objectives-Website-Defacement.png)
+
+## Investigation Report
+
+[Open the Professional SOC Incident Investigation Report (PDF)](Incident-Report.pdf)
+
 
 ## Technical Skills Demonstrated
 
