@@ -166,10 +166,11 @@ index=botsv1 EventCode=1 "3791.exe"
 
 Documented process information:
 
-- Executable: `3791.exe`
-- Location: `C:\inetpub\wwwroot\joomla\3791.exe`
-- Parent process: `cmd.exe`
+
+- Process created (Image): `C:\Windows\SysWOW64\cmd.exe`
+- Parent process (ParentImage): `C:\inetpub\wwwroot\joomla\3791.exe`
 - Execution context: `NT AUTHORITY\IUSR`
+
 
 Validate these values against the actual Sysmon event.
 
