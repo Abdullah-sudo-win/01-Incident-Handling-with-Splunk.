@@ -118,12 +118,14 @@ Used Windows Sysmon Event ID 1 (Process Creation) to investigate the execution o
 
 **Observed process information:**
 
-- Process created (Image): `C:\Windows\SysWOW64\cmd.exe`
-- Parent process (ParentImage): `C:\inetpub\wwwroot\joomla\3791.exe`
+- Process created (Image): `C:\inetpub\wwwroot\joomla\3791.exe`
+- Parent process (ParentImage): `C:\Windows\SysWOW64\cmd.exe`
+- Command line: `3791.exe`
 - Execution context: `NT AUTHORITY\IUSR`
 
+The captured Sysmon event shows that `cmd.exe` launched the executable `3791.exe` on the investigated server.
 
-This evidence connects the suspicious executable to process execution on the investigated server.
+This parent-child process relationship provides useful endpoint evidence for investigating suspicious process execution.
 
 ![Sysmon Process Creation](evidence/06-Installation-Sysmon-Process-Creation.png)
 
@@ -147,7 +149,6 @@ Further validation is required before confirming the full impact.
 
 [Open the Professional SOC Incident Investigation Report (PDF)](Incident-Report.pdf)
 
-
 ## Technical Skills Demonstrated
 
 - SIEM investigation using Splunk.
@@ -159,6 +160,7 @@ Further validation is required before confirming the full impact.
 - Suricata alert analysis.
 - Windows event log investigation.
 - Sysmon Event ID 1 analysis.
+- Parent-child process relationship analysis.
 - Suspicious file upload investigation.
 - Process execution analysis.
 - Security incident documentation.
